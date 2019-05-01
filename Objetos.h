@@ -2,6 +2,7 @@
 #define Objetos_h
 #include <string>
 #include <iostream>
+#include <iterator>
 using namespace std;
 
 class Objetos{
@@ -16,24 +17,34 @@ class Objetos{
     public:
     //Constructor
     Objetos();
+    Objetos(string,double,string,string);
     //Metodos modificadores y accesores
     string getNombre();
     double getPrecio();
     string getDescripcion();
     string getPropietario();
 
-    void getNombre(string);
-    void getPrecio(double);
-    void getDescripcion(string);
+    void setNombre(string);
+    void setPrecio(double);
+    void setDescripcion(string);
+    string toString();
 
 };
 
     //Constructor
     Objetos::Objetos(){
-        sNombre="NA";
+        sNombre="N/A";
         dPrecio=0.0;
         sDescripcion="N/A";
         sCorreoVendedor="N/A";
+        iCalificacion=0;
+        sComentarios="N/A"; 
+    }
+    Objetos::Objetos(string nNombre,double nPrecio,string nDesc,string nCorreo){
+        sNombre=nNombre;
+        dPrecio=nPrecio;
+        sDescripcion=nDesc;
+        sCorreoVendedor=nCorreo;
         iCalificacion=0;
         sComentarios="N/A"; 
     }
@@ -51,14 +62,21 @@ class Objetos{
         return sCorreoVendedor;
     }
 
-    void Objetos::getNombre(string nNombre){
+    void Objetos::setNombre(string nNombre){
         sNombre=nNombre;
     }
-    void Objetos::getPrecio(double nPrecio){
+    void Objetos::setPrecio(double nPrecio){
         dPrecio=nPrecio;
     }
-    void Objetos::getDescripcion(string nDescripcion){
+    void Objetos::setDescripcion(string nDescripcion){
         sDescripcion= nDescripcion;
+    }
+    string Objetos::toString(){
+        //sNombre,dPrecio,sDescripcion,sCorreo,
+        string objectString=sNombre+",";
+        objectString+=std::to_string(dPrecio);
+        objectString+=","+sDescripcion+","+sCorreoVendedor;
+        return objectString;
     }
 
 #endif
