@@ -10,22 +10,29 @@ class Catalogo{
 
     public:
     Catalogo();
-    Objetos buscarObjeto(string);
+    void buscarObjeto(string,Objetos[],int& );
     Objetos buscarObjeto(string,string);
+    Objetos buscarObjeto(int);
     bool publicarObjeto(Objetos);
-    bool editarObjeto(Objetos);
+    bool editarObjeto(Objetos,string);
+    bool quitarObjeto(string,string);
+    int getCapacidad();
 
 };
 
     Catalogo::Catalogo(){
         iCapacidad=0;
     }
-    Objetos Catalogo::buscarObjeto(string sNombreObjeto){
+    void Catalogo::buscarObjeto(string sNombreObjeto,Objetos arr[],int &cant){
+        cant=0;
         for(int i=0; i<iCapacidad;i++){
             if(sNombreObjeto==colleccionDeObjetos[i].getNombre()){
-                return colleccionDeObjetos[i];
+                arr[cant]=colleccionDeObjetos[i];
+                cant++;
             }
         }
+        if(cant==0)
+        cant=-1;
         
     }
     Objetos Catalogo::buscarObjeto(string sNombreObjeto,string sNombreVend){
@@ -36,7 +43,11 @@ class Catalogo{
                 return colleccionDeObjetos[i];
             }
         }
+        return Objetos();
         
+    }
+    Objetos Catalogo::buscarObjeto(int indice){
+        return colleccionDeObjetos[indice];
     }
 
     bool Catalogo::publicarObjeto(Objetos nObjeto){
@@ -54,14 +65,26 @@ class Catalogo{
             return false;
         }
     }
-    bool Catalogo::editarObjeto(Objetos nObjeto){
+    bool Catalogo::editarObjeto(Objetos nObjeto,string nombreProd){
         for(int i=0; i<iCapacidad;i++){
-            if(colleccionDeObjetos[i].getPropietario()==nObjeto.getPropietario()){
+            if(colleccionDeObjetos[i].getPropietario()==nObjeto.getPropietario()&&colleccionDeObjetos[i].getNombre()==nombreProd){
                 colleccionDeObjetos[i]=Objetos(nObjeto.getNombre(),nObjeto.getPrecio(),nObjeto.getDescripcion(),nObjeto.getPropietario());
                 return true;
             }
         }
         return false;
+    }
+    bool Catalogo::quitarObjeto(string correoVend,string nombreProd){
+        for(int i=0; i<iCapacidad;i++){
+            if(colleccionDeObjetos[i].getPropietario()==correoVend&&colleccionDeObjetos[i].getNombre()==nombreProd){
+                colleccionDeObjetos[i]=Objetos();
+                return true;
+            }
+        }
+        return false;
+    }
+    int Catalogo::getCapacidad(){
+        return iCapacidad;
     }
 
 

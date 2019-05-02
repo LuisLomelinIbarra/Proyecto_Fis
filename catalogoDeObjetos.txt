@@ -1,2 +1,3 @@
-Tokio Blues,200,Libro de literatura utilizado en la clase AEV,c.calles@itesm.mx
-Software Engineering 9th Edition by Ian Sommervile,1000,Libro de texto para la clase de Fundamentos de La ingenieríade software,a01177015@itesm.mx
+Tokio Blues,200.000000,Libro de literatura utilizado en la clase AEV,c.calles@itesm.mx
+Software Engineering 9th Edition by Ian Sommervile,1000.000000,Libro de texto para la clase de Fundamentos de La ingenieríade software,a01177015@itesm.mx
+COOL CAT SAVES THE WORLD,100.000000,Una pelicula de entretenimiento,asdf@itesm.mx

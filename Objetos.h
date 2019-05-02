@@ -28,6 +28,8 @@ class Objetos{
     void setPrecio(double);
     void setDescripcion(string);
     string toString();
+    void imprimirEnPantalla();
+    
 
 };
 
@@ -77,6 +79,9 @@ class Objetos{
         objectString+=std::to_string(dPrecio);
         objectString+=","+sDescripcion+","+sCorreoVendedor;
         return objectString;
+    }
+    void Objetos::imprimirEnPantalla(){
+        cout <<"\n Nombre del objeto: "<<sNombre<<"\nPrecio: "<<dPrecio<<"\n Descripción: "<<sDescripcion<< "\nCorreo del propetario: "<<sCorreoVendedor<<endl;
     }
 
 #endif

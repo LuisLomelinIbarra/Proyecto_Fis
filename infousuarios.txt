@@ -1,1 +1,2 @@
-Luis Fernando Lomelin Ibarra,a01177015@itesm.mx,Cool!,Tokio Blues^c.calles@itesm.mx,Software Engineering 9th Edition by Ian Sommervile
+Luis Fernando Lomelin Ibarra,a01177015@itesm.mx,Cool!,335763313,Tokio Blues^c.calles@itesm.mx,N/A
+Fer,asdf@itesm.mx,Nice,111111111,N/A^N/A;Software Engineering 9th Edition by Ian Sommervile^a01177015@itesm.mx,COOL CAT SAVES THE WORLD
